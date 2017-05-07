@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "469933070796",
+    "firebase_url": "https://signinactivity-671ab.firebaseio.com",
+    "project_id": "signinactivity-671ab",
+    "storage_bucket": "signinactivity-671ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:469933070796:android:618377b0fa1270da",
+        "android_client_info": {
+          "package_name": "com.example.android.signinactivity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "469933070796-id6ula69ee91crt0976t4e0e0vqfqal0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.signinactivity",
+            "certificate_hash": "58ca267842ebcdd67d1d1ad970fadde26bd793eb"
+          }
+        },
+        {
+          "client_id": "469933070796-cefnpba1q5bn4091lajclep9tvd0i2g5.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "469933070796-jr0uq5uectsmdgc78aca292hkqnol27e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSO_J6MuQDvAuFlkVS52Nr9RiSMaSepoI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
