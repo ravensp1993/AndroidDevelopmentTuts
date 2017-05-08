@@ -16,15 +16,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.UserInfo;
 
 import java.io.InputStream;
 import java.util.ArrayList;
+
 /**
  * Created by RavenSP on 7/5/2017.
  */
@@ -43,7 +44,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     private ArrayList<String> mLogInData;
     private Button logout;
 
-    private static GoogleSignInManager GSIM;
+    private static SignInManager SIM;
 
     //creation of bundle, put arguments in it and set it when creating fragment for return.
     public static ProfileFragment newInstance(ArrayList<String> details) {
@@ -85,7 +86,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         emailTV = (TextView) view.findViewById(R.id.user_email);
         emailTV.setText(email);
 
-        GSIM = GoogleSignInManager.get(getActivity());
+        SIM = SignInManager.get(getActivity());
         return view;
     }
 
@@ -97,8 +98,16 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     }
 
     private void signOut() {
+        Log.w(TAG,"" + "User Sign out!");
+        //if facebook login is permitted
+        for (UserInfo user: FirebaseAuth.getInstance().getCurrentUser().getProviderData()) {
+            if(user.getProviderId().equals("facebook.com")){
+                LoginManager.getInstance().logOut();
+            }
+        }
+
         FirebaseAuth.getInstance().signOut();
-        Auth.GoogleSignInApi.signOut(GSIM.getmGoogleApiClient()).setResultCallback(
+        Auth.GoogleSignInApi.signOut(SIM.getmGoogleApiClient()).setResultCallback(
                 new ResultCallback<Status>() {
                     @Override
                     public void onResult(Status status) {
@@ -106,12 +115,12 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                     }
                 });
         revokeAccess();
-        GSIM.getmGoogleApiClient().stopAutoManage(getActivity());
-        GSIM.getmGoogleApiClient().disconnect();
+        SIM.getmGoogleApiClient().stopAutoManage(getActivity());
+        SIM.getmGoogleApiClient().disconnect();
     }
 
     private void revokeAccess() {
-        Auth.GoogleSignInApi.revokeAccess(GSIM.getmGoogleApiClient()).setResultCallback(
+        Auth.GoogleSignInApi.revokeAccess(SIM.getmGoogleApiClient()).setResultCallback(
                 new ResultCallback<Status>() {
                     @Override
                     public void onResult(Status status) {
@@ -121,30 +130,6 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     }
 
     // end of google methods
-    //download bitmap and use
-    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
-        ImageView bmImage;
 
-        public DownloadImageTask(ImageView bmImage) {
-            this.bmImage = bmImage;
-        }
-
-        protected Bitmap doInBackground(String... urls) {
-            String urldisplay = urls[0];
-            Bitmap mIcon11 = null;
-            try {
-                InputStream in = new java.net.URL(urldisplay).openStream();
-                mIcon11 = BitmapFactory.decodeStream(in);
-            } catch (Exception e) {
-                Log.e("Error", e.getMessage());
-                e.printStackTrace();
-            }
-            return mIcon11;
-        }
-
-        protected void onPostExecute(Bitmap result) {
-            bmImage.setImageBitmap(result);
-        }
-    }
 
 }
