@@ -1,8 +1,13 @@
 package com.example.android.criminalintent;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
+
+import com.example.android.criminalintent.database.CrimeBaseHelper;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
@@ -13,8 +18,12 @@ import java.util.UUID;
 public class CrimeLab {
     private static CrimeLab sCrimeLab;
     private List<Crime> mCrimes;
+    private Context mContext;
+    private SQLiteDatabase mDatabase;
 
-    public static CrimeLab get(Context context) {
+    public CrimeLab get(Context context) {
+        mContext = context.getApplicationContext();
+        mDatabase = new CrimeBaseHelper(mContext).getWritableDatabase();
         if (sCrimeLab == null) {
             sCrimeLab = new CrimeLab(context);
         }
@@ -36,9 +45,27 @@ public class CrimeLab {
     }
 
     public Crime getCrime(UUID id) {
-        for (Crime crime : mCrimes) {
-            if (crime.getId().equals(id)) return crime;
+        Crime c = null;
+        for (int i = 0; i < mCrimes.size(); i++) {
+            if (mCrimes.get(i).getId().equals(id)) {
+                c = mCrimes.get(i);
+                break;
+            }
+
         }
-        return null;
+        return c;
+    }
+
+    public void addCrime(Crime c) {
+        mCrimes.add(c);
+    }
+
+    public void removeCrime(UUID id) {
+        for (int i = 0; i < mCrimes.size(); i++) {
+            if (mCrimes.get(i).getId().equals(id)) {
+                mCrimes.remove(i);
+                break;
+            }
+        }
     }
 }
