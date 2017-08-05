@@ -11,12 +11,31 @@ public class Crime {
     private UUID mId;
     private String mTitle;
     private Date mDate;
+    private String mSuspect;
     private boolean mSolved;
+
+    public String getmSuspect() {
+        return mSuspect;
+    }
+
+    public void setmSuspect(String mSuspect) {
+        this.mSuspect = mSuspect;
+    }
 
     public Crime() {
         mId = UUID.randomUUID();
         mTitle = "";
         mDate = new Date();
+    }
+
+    public Crime(UUID id) {
+        mId = id;
+        mTitle = "";
+        mDate = new Date();
+    }
+
+    public String getPhotoFileName(){
+        return "IMG_" + getId().toString() + ".jpg";
     }
 
     public UUID getId() {
