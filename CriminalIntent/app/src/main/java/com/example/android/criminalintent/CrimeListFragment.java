@@ -122,6 +122,7 @@ public class CrimeListFragment extends Fragment {
             mAdapter = new CrimeAdapter(crimes);
             mCrimeRecyclerView.setAdapter(mAdapter);
         } else {
+            mAdapter.setCrimes(crimes);
             mAdapter.notifyItemChanged(posId);
         }
         //when deleting things from recyclerView add this 2 lines
@@ -190,6 +191,9 @@ public class CrimeListFragment extends Fragment {
             //return position % 2;
         }
 
+        public void setCrimes(List<Crime> crimes){
+            mCrimes = crimes;
+        }
         @Override
         public CrimeHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
