@@ -1,0 +1,26 @@
+[
+    {
+        "outputFile": "C:\\Users\\RavenSP\\Desktop\\Practice\\AndroidDevelopmentTuts\\BeatBox\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 45,
+                    "endOffset": 96
+                },
+                "from": {
+                    "file": "C:\\Users\\RavenSP\\.android\\build-cache\\d53ba315fc5137fbd348f36095912025c1225b83\\output\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 229,
+                        "endColumn": 45,
+                        "endOffset": 270
+                    }
+                }
+            }
+        ]
+    }
+]
