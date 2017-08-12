@@ -1,0 +1,7 @@
+#Fri Aug 11 19:15:16 SGT 2017
+base.0=C\:\\Users\\RavenSP\\Desktop\\Practice\\AndroidDevelopmentTuts\\BeatBox\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_b072595c26576b06939ccfd9d1362e13edb8fc58
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=C\:\\Users\\RavenSP\\Desktop\\Practice\\AndroidDevelopmentTuts\\BeatBox\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_66b42b01e243828944cdd5cbca6e3194de319657\\classes.dex
+base.1=C\:\\Users\\RavenSP\\Desktop\\Practice\\AndroidDevelopmentTuts\\BeatBox\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_66b42b01e243828944cdd5cbca6e3194de319657
+file.0=C\:\\Users\\RavenSP\\Desktop\\Practice\\AndroidDevelopmentTuts\\BeatBox\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_b072595c26576b06939ccfd9d1362e13edb8fc58\\classes.dex

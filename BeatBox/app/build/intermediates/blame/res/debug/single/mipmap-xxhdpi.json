@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\Users\\RavenSP\\Desktop\\Practice\\AndroidDevelopmentTuts\\BeatBox\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_launcher.png",
+        "source": "C:\\Users\\RavenSP\\Desktop\\Practice\\AndroidDevelopmentTuts\\BeatBox\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\RavenSP\\Desktop\\Practice\\AndroidDevelopmentTuts\\BeatBox\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_launcher_round.png",
+        "source": "C:\\Users\\RavenSP\\Desktop\\Practice\\AndroidDevelopmentTuts\\BeatBox\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    }
+]
